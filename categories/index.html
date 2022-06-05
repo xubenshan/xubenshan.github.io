@@ -345,7 +345,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getMinutes() + '.jpg';
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
@@ -376,11 +376,11 @@
                 </a>
                 
                 
-                <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%80%83/" title="蓝桥杯备考: 2">
+                <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%80%83/" title="蓝桥杯备考: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F5EEF8;">蓝桥杯备考
-                        <span class="tag-length">2</span>
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -427,7 +427,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"技术分享","max":3},{"name":"蓝桥杯备考","max":3}],
+            indicator: [{"name":"技术分享","max":4},{"name":"蓝桥杯备考","max":4}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -438,7 +438,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,2],
+                    value : [1,3],
                     name : '文章分类数量'
                 }
             ]
@@ -522,9 +522,6 @@
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.7k</span>
-            
             
             
                 
@@ -549,7 +546,7 @@
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/xubenshan" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
@@ -565,7 +562,7 @@
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1782622988" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1782622988" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
@@ -710,19 +707,7 @@ $(function () {
     
 
     <!-- 雪花特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
-            }
-        </script>
     
-<!--动态线条背景-->
-<script type="text/javascript"
-color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
-</script>
 
     <!-- 鼠标星星特效 -->
     
