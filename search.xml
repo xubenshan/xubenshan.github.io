@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>typora图床搭建</title>
+    <url>/2022/06/04/typora%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA-1/</url>
+    <content><![CDATA[<h1 id="typora图床搭建"><a href="#typora图床搭建" class="headerlink" title="typora图床搭建"></a>typora图床搭建</h1><blockquote>
+<p>采用的是typora+github图床+picGo+jsDelivr CDN加速的配置</p>
+</blockquote>
+<h2 id="下载picGo"><a href="#下载picGo" class="headerlink" title="下载picGo"></a>下载picGo</h2><p>去<a href="https://github.com/Molunerfinn/PicGo/releases">官网</a>下载对应版本的PicGo。<span id="more"></span></p>
+<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206041038419.png" alt="image-20220604103813315"></p>
+<p>我的电脑是win64系统，所以下载64版本的exe文件。</p>
+<p>如果有小伙伴电脑访问该网址比较慢，可以通过山东大学镜像站提供的<a href="https://mirrors.sdu.edu.cn/github-release/Molunerfinn_PicGo/">镜像地址</a>去下载应用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206041043229.png" alt="image-20220604104348162"></p>
+<h2 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h2><h2 id="创建新仓库"><a href="#创建新仓库" class="headerlink" title="创建新仓库"></a>创建新仓库</h2><blockquote>
+<p>用于存储图片</p>
+</blockquote>
+<p>新建仓库，选择<code>New repository</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206041049339.png" alt="image-20220604104940224"></p>
+<p>仓库名字和<code>descripition</code>没有固定要求，随便写。选择<code>public</code>,在<code>Add a README file</code>前面的复选框打勾。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206042010755.png" alt="image-20220604201035679"></p>
+<p>最后点击<code>Create repository</code>即可。</p>
+<h2 id="获取repo-tokens"><a href="#获取repo-tokens" class="headerlink" title="获取repo tokens"></a>获取repo tokens</h2><blockquote>
+<p>让PicGo有权向我们的GitHub仓库push图片。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206042015000.png" alt="image-20220604201558937"></p>
+<p>点击头像下拉菜单中的<code>Settings</code>选项，选择最后一个选项<code>Developer settings</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206042017060.png" alt="image-20220604201758952"></p>
+<p>选择最后一个选项<code>Personal access tokens</code>，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206042020808.png" alt="image-20220604202004744"></p>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>使用技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>动态规划</title>
     <url>/2022/05/28/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>由于蓝桥杯对DP问题的考察加大，那么DP问题也就成了我们备考蓝桥杯的重点内容。我打算分三次写完DP，第一篇呢是为了让小伙伴们初步理解DP思想，里面的例题是非常经典同时又是非常基础的。<br>蓝桥杯的比赛时间越来越近了，所以最近我会加快备考文章的更新，小伙伴们不要着急噢<del>考前一定会将常考的知识点更新完的。<br>好啦废话不多说，进入我们今天的DP学习吧</del><br><img src="https://img-blog.csdnimg.cn/271c13f4b83844c6bbe7f1160ef512dd.gif#pic_center" alt="在这里插入图片描述"></p>
-</blockquote>
-<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr>
-<h1 id="一、入门——从记忆化搜索说起"><a href="#一、入门——从记忆化搜索说起" class="headerlink" title="一、入门——从记忆化搜索说起"></a>一、入门——从记忆化搜索说起</h1><p>在前面的文章中我们已经对动态规划做了铺垫，不知道小伙伴们还记不记得在讲解搜索算法时我也给大家讲了记忆化搜索，还说记忆化搜索是学习DP思想的基础。有些小伙伴没看过之前的文章，因此呢这篇文章还是要从记忆化搜索说起。</p>
+    <content><![CDATA[<hr>
+<h1 id="一、入门——从记忆化搜索说起"><a href="#一、入门——从记忆化搜索说起" class="headerlink" title="一、入门——从记忆化搜索说起"></a>一、入门——从记忆化搜索说起</h1><p>在前面的文章中我们已经对动态规划做了铺垫，不知道小伙伴们还记不记得在讲解搜索算法时我也给大家讲了记忆化搜索，还说记忆化搜索是学习DP思想的基础。有些小伙伴没看过之前的文章，因此呢这篇文章还是要从记忆化搜索说起。<span id="more"></span></p>
 <p><font face="微软雅黑" color=#FF8C00 size=3> <strong>以斐波那契数列为例，它的第一项为1，第二项为1，从第三项开始，每一项的值都是前面两项的和。让我们求第n项的是多少。对于这个问题，我们从最开始的递归思想来看。</strong></font></p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
 <span class="token punctuation">&#123;</span>
@@ -338,24 +369,8 @@
   <entry>
     <title>搜索专题（一）</title>
     <url>/2022/05/29/%E6%90%9C%E7%B4%A2%E4%B8%93%E9%A2%98%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<p><img src="https://img-blog.csdnimg.cn/acdd5d863020486a920cbece48dbe12d.gif#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>蓝桥杯省赛将在4月初举行，距离比赛也就剩一个多月的时间。为了提高自己的编程能力，在比赛中取得比较👌的成绩。接下来的一个多月我会在博客中更新蓝桥杯的学习。争取在考前将一些重要的算法过一遍。<br><img src="https://img-blog.csdnimg.cn/89a67bbb0969467587a73d313071f5bb.gif#pic_center" alt="在这里插入图片描述"><br>蓝桥杯常考的算法我整理到了一张思维导图里面，小伙伴可以看一下噢。<br><img src="https://img-blog.csdnimg.cn/a63bde7e7247449f9b3b780d4ddd2db7.bmp?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>这张蓝桥杯思维导图可能不太全面，以后会经常补充的。。</p>
-</blockquote>
-<p>我是这样想滴，我会对常考的算法做个专题总结，分专题来讲。文章更新的速度呢取决于我刷题的速度啦！ 因为每写一个专题必然要写运用到这种算法的题目啦~~~鲁迅先生说过~~  “只讲解算法思想，不实际运用就是在耍流氓”。写蓝桥杯文章的过程是这个样子的，先确定要写哪个专题，然后呢大量刷题，模板题啦，经典题啦，最最重要的是历届的蓝桥杯真题啦。刷完之后呢做总结理清这种算法的基本思路，最后就形成了一篇蓝桥杯备考文章啦。当然文章是要时常更改补充的，因为在刷题的过程中可能对某些算法思想有了新的感悟~也要参加蓝桥杯的小伙伴们可以一起期待噢，关注我一定不会让你失望的。噢还有我参加的是C++组所以呢我写的题解也是C++的。</p>
-<blockquote>
-<p>我的CSDN博客 <a href="https://blog.csdn.net/ccevv/">https://blog.csdn.net/ccevv/</a></p>
-</blockquote>
-<hr>
-<p>好啦接下来进入正题。<br><img src="https://img-blog.csdnimg.cn/caa97b1a74dc41959dd23b2ef973a6e6.png#pic_center" alt="在这里插入图片描述"><br>我们知道蓝桥杯俗称暴力杯，搜索在蓝桥杯中是最最基本的算法思想。学会DFS和BFS是在蓝桥杯比赛中取得好成绩的基础。我会从这几个方面入手，给小伙伴们详细讲解搜索专题。<br><img src="https://img-blog.csdnimg.cn/7d631a7e65bb430c9c1015d59f642b96.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>本篇的内容主要有以下几个方面噢，小伙伴们可以有个大致了解。</p>
-<blockquote>
-<p>DFS基本思想(DFS+回溯）<br>深度优先搜索模板<br>DFS例题<br>剪枝思想<br>剪枝思想在DFS中的应用</p>
-</blockquote>
-<hr>
-<p>@[TOC]</p>
-<hr>
-<h2 id="一、深度优先搜索-DFS-回溯"><a href="#一、深度优先搜索-DFS-回溯" class="headerlink" title="一、深度优先搜索(DFS)+回溯"></a>一、深度优先搜索(DFS)+回溯</h2><p><code>DFS</code>是一种搜索的策略，简单来说就是一条路走到黑。当走到尽头之后就回退到上一个结点，继续一条路走到黑。回退的过程就叫做<strong>回溯</strong>。<br><code>DFS</code>一般采用<strong>递归</strong>的方式实现。</p>
+    <content><![CDATA[<hr>
+<h2 id="一、深度优先搜索-DFS-回溯"><a href="#一、深度优先搜索-DFS-回溯" class="headerlink" title="一、深度优先搜索(DFS)+回溯"></a>一、深度优先搜索(DFS)+回溯</h2><p><code>DFS</code>是一种搜索的策略，简单来说就是一条路走到黑。当走到尽头之后就回退到上一个结点，继续一条路走到黑。回退的过程就叫做<strong>回溯</strong>。<br><code>DFS</code>一般采用<strong>递归</strong>的方式实现。<span id="more"></span></p>
 <blockquote>
 <p>对递归的详细讲解会在以后出一个独立的专题，小伙伴们可以期待一下噢！</p>
 <p><code>DFS</code>可以用一个递归搜索树来形象描述，那这棵树长什么样子呢，小伙伴们继续往下看。<br><img src="https://img-blog.csdnimg.cn/b46f5fe9bde34fbd907b714c6ea1284c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br>事实上对所有的合法<code>DFS</code>求解过程都可以把它画成树的形式，死胡同就相当于叶子结点。分岔口就相当于非叶子结点。<br>对某个DFS类型的题目，不妨把一些状态作为树的结点，问题就变得很直观了。</p>
@@ -802,58 +817,12 @@
       </tags>
   </entry>
   <entry>
-    <title>typora图床搭建</title>
-    <url>/2022/06/04/typora%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA-1/</url>
-    <content><![CDATA[<h1 id="typora图床搭建"><a href="#typora图床搭建" class="headerlink" title="typora图床搭建"></a>typora图床搭建</h1><blockquote>
-<p>采用的是typora+github图床+picGo+jsDelivr CDN加速的配置</p>
-</blockquote>
-<h2 id="下载picGo"><a href="#下载picGo" class="headerlink" title="下载picGo"></a>下载picGo</h2><p>去<a href="https://github.com/Molunerfinn/PicGo/releases">官网</a>下载对应版本的PicGo。<span id="more"></span></p>
-<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206041038419.png" alt="image-20220604103813315"></p>
-<p>我的电脑是win64系统，所以下载64版本的exe文件。</p>
-<p>如果有小伙伴电脑访问该网址比较慢，可以通过山东大学镜像站提供的<a href="https://mirrors.sdu.edu.cn/github-release/Molunerfinn_PicGo/">镜像地址</a>去下载应用。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206041043229.png" alt="image-20220604104348162"></p>
-<h2 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h2><h2 id="创建新仓库"><a href="#创建新仓库" class="headerlink" title="创建新仓库"></a>创建新仓库</h2><blockquote>
-<p>用于存储图片</p>
-</blockquote>
-<p>新建仓库，选择<code>New repository</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206041049339.png" alt="image-20220604104940224"></p>
-<p>仓库名字和<code>descripition</code>没有固定要求，随便写。选择<code>public</code>,在<code>Add a README file</code>前面的复选框打勾。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206042010755.png" alt="image-20220604201035679"></p>
-<p>最后点击<code>Create repository</code>即可。</p>
-<h2 id="获取repo-tokens"><a href="#获取repo-tokens" class="headerlink" title="获取repo tokens"></a>获取repo tokens</h2><blockquote>
-<p>让PicGo有权向我们的GitHub仓库push图片。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206042015000.png" alt="image-20220604201558937"></p>
-<p>点击头像下拉菜单中的<code>Settings</code>选项，选择最后一个选项<code>Developer settings</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206042017060.png" alt="image-20220604201758952"></p>
-<p>选择最后一个选项<code>Personal access tokens</code>，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic@main/img/202206042020808.png" alt="image-20220604202004744"></p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>使用技巧</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>搜索专题（二）</title>
     <url>/2022/05/28/%E6%90%9C%E7%B4%A2%E4%B8%93%E9%A2%98%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<p><img src="https://img-blog.csdnimg.cn/4bf4aceb99db4049a902adddd6fc2a61.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_12,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>hello小伙伴们，我们又见面啦<del>上一篇文章<a href="https://blog.csdn.net/CCEVV/article/details/122796055?spm=1001.2014.3001.5501">蓝桥杯算法竞赛备考（一）—— 搜索专题（上）（C++）</a>得到了小伙伴们的认可，我真的是喜出望外，小伙伴们的支持是我最大的动力噢</del><br>好啦废话不多说，让我们进入今天的算法学习吧~<br><img src="https://img-blog.csdnimg.cn/e610b5e52d74485a901d735d020f3c6d.png#pic_center" alt="在这里插入图片描述"><br>今天讲的主要有以下几点内容噢！</p>
-<blockquote>
-<ol>
-<li>广度优先搜索的基本思想</li>
-<li>BFS的模板</li>
-<li>BFS经典例题</li>
-<li>记忆化搜索</li>
-</ol>
-</blockquote>
-<hr>
-<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
 <hr>
 <h1 id="一、广度优先搜索（BFS）"><a href="#一、广度优先搜索（BFS）" class="headerlink" title="一、广度优先搜索（BFS）"></a>一、广度优先搜索（BFS）</h1><blockquote>
-<p>深度优先搜索会优先考虑搜索的深度，就是找不到答案不回头。 当答案在解答树中比较稀疏的时候，DFS会陷入过深的情况，搜索很多无效状态，一时半会找不到解，这时候我们就可以用BFS啦~&#x3D;&#x3D;在连通性，最短路问题中常优先考虑BFS&#x3D;&#x3D;。</p>
+<p>深度优先搜索会优先考虑搜索的深度，就是找不到答案不回头。 当答案在解答树中比较稀疏的时候，DFS会陷入过深的情况，搜索很多无效状态，一时半会找不到解，这时候我们就可以用BFS啦~&#x3D;&#x3D;在连通性，最短路问题中常优先考虑BFS&#x3D;&#x3D;。<span id="more"></span></p>
 <p><code>BFS</code>和<code>DFS</code>搜索的顺序是不一样的。<code>DFS</code>前面已经讲到过，是以深度为第一关键词的，也就是说从某个结点出发总是先选择其中一个分支前进，而不管其他的分支，直到碰到死胡同才停止。然后回溯到上一个结点选择其他的分支。<br>而<code>BFS</code>搜索的顺序是这样的，从某个结点出发，总是先依次访问这个结点能直接到达的所有结点，然后再访问这些结点所能直接到达的所有结点，依次类推，直到所有的结点都访问完毕。<br>下面呢我们看一个迷宫，小伙伴们可能会对<code>BFS</code>有一个清晰的认识。<br><img src="https://img-blog.csdnimg.cn/0b2c88445f9746bd8a91f1c198c15bcd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br><code>BFS</code>搜索的顺序是这个样子滴~首先从起点<code>A</code>出发，它能到达的所有结点有<code>B</code>和<code>C</code>（第二层），因此接下来去访问<code>B</code>，<code>B</code>能直接到达<code>D</code>和<code>E</code>（第三层），接下来访问<code>C</code>，<code>C</code>能直接到达<code>F</code>和<code>G</code>（第三层）。第二层访问结束，接下来访问<code>D</code>，<code>D</code>能直接到达<code>I</code>和<code>G</code>和<code>H</code>（第四层）。接下来访问<code>E</code>，<code>E</code>能直接到达<code>M</code>和<code>L</code>和<code>K</code>（第四层），接着访问<code>F</code>，<code>F</code>是死胡同。接下来访问<code>G</code>，<code>G</code>是终点，搜索结束。<br>至于那些未访问过的结点，我们就不用去管它了。</p>
 </blockquote>
 <p>可以看出层数就是从结点A出发到达其他结点的最小步数。&#x3D;&#x3D;广度优先搜索会优先考虑每种状一个专题态的和初始状态的距离，也就是与初始状态越接近的就会越先考虑。这就能保证一个状态被访问时一定是采用的最短路径。&#x3D;&#x3D;</p>

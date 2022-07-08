@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">5k</span>
+            <span class="post-count">4.4k</span>
         </span>
     </span>
 
@@ -99,7 +99,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">20 分钟</span>
+            <span class="post-count">18 分钟</span>
         </span>
     </span>
 </div>
@@ -114,24 +114,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><img src="https://img-blog.csdnimg.cn/acdd5d863020486a920cbece48dbe12d.gif#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>蓝桥杯省赛将在4月初举行，距离比赛也就剩一个多月的时间。为了提高自己的编程能力，在比赛中取得比较👌的成绩。接下来的一个多月我会在博客中更新蓝桥杯的学习。争取在考前将一些重要的算法过一遍。<br><img src="https://img-blog.csdnimg.cn/89a67bbb0969467587a73d313071f5bb.gif#pic_center" alt="在这里插入图片描述"><br>蓝桥杯常考的算法我整理到了一张思维导图里面，小伙伴可以看一下噢。<br><img src="https://img-blog.csdnimg.cn/a63bde7e7247449f9b3b780d4ddd2db7.bmp?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>这张蓝桥杯思维导图可能不太全面，以后会经常补充的。。</p>
-</blockquote>
-<p>我是这样想滴，我会对常考的算法做个专题总结，分专题来讲。文章更新的速度呢取决于我刷题的速度啦！ 因为每写一个专题必然要写运用到这种算法的题目啦~~~鲁迅先生说过~~  “只讲解算法思想，不实际运用就是在耍流氓”。写蓝桥杯文章的过程是这个样子的，先确定要写哪个专题，然后呢大量刷题，模板题啦，经典题啦，最最重要的是历届的蓝桥杯真题啦。刷完之后呢做总结理清这种算法的基本思路，最后就形成了一篇蓝桥杯备考文章啦。当然文章是要时常更改补充的，因为在刷题的过程中可能对某些算法思想有了新的感悟~也要参加蓝桥杯的小伙伴们可以一起期待噢，关注我一定不会让你失望的。噢还有我参加的是C++组所以呢我写的题解也是C++的。</p>
-<blockquote>
-<p>我的CSDN博客 <a target="_blank" rel="noopener" href="https://blog.csdn.net/ccevv/">https://blog.csdn.net/ccevv/</a></p>
-</blockquote>
-<hr>
-<p>好啦接下来进入正题。<br><img src="https://img-blog.csdnimg.cn/caa97b1a74dc41959dd23b2ef973a6e6.png#pic_center" alt="在这里插入图片描述"><br>我们知道蓝桥杯俗称暴力杯，搜索在蓝桥杯中是最最基本的算法思想。学会DFS和BFS是在蓝桥杯比赛中取得好成绩的基础。我会从这几个方面入手，给小伙伴们详细讲解搜索专题。<br><img src="https://img-blog.csdnimg.cn/7d631a7e65bb430c9c1015d59f642b96.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>本篇的内容主要有以下几个方面噢，小伙伴们可以有个大致了解。</p>
-<blockquote>
-<p>DFS基本思想(DFS+回溯）<br>深度优先搜索模板<br>DFS例题<br>剪枝思想<br>剪枝思想在DFS中的应用</p>
-</blockquote>
-<hr>
-<p>@[TOC]</p>
-<hr>
-<h2 id="一、深度优先搜索-DFS-回溯"><a href="#一、深度优先搜索-DFS-回溯" class="headerlink" title="一、深度优先搜索(DFS)+回溯"></a>一、深度优先搜索(DFS)+回溯</h2><p><code>DFS</code>是一种搜索的策略，简单来说就是一条路走到黑。当走到尽头之后就回退到上一个结点，继续一条路走到黑。回退的过程就叫做<strong>回溯</strong>。<br><code>DFS</code>一般采用<strong>递归</strong>的方式实现。</p>
+  <hr>
+<h2 id="一、深度优先搜索-DFS-回溯"><a href="#一、深度优先搜索-DFS-回溯" class="headerlink" title="一、深度优先搜索(DFS)+回溯"></a>一、深度优先搜索(DFS)+回溯</h2><p><code>DFS</code>是一种搜索的策略，简单来说就是一条路走到黑。当走到尽头之后就回退到上一个结点，继续一条路走到黑。回退的过程就叫做<strong>回溯</strong>。<br><code>DFS</code>一般采用<strong>递归</strong>的方式实现。<span id="more"></span></p>
 <blockquote>
 <p>对递归的详细讲解会在以后出一个独立的专题，小伙伴们可以期待一下噢！</p>
 <p><code>DFS</code>可以用一个递归搜索树来形象描述，那这棵树长什么样子呢，小伙伴们继续往下看。<br><img src="https://img-blog.csdnimg.cn/b46f5fe9bde34fbd907b714c6ea1284c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br>事实上对所有的合法<code>DFS</code>求解过程都可以把它画成树的形式，死胡同就相当于叶子结点。分岔口就相当于非叶子结点。<br>对某个DFS类型的题目，不妨把一些状态作为树的结点，问题就变得很直观了。</p>

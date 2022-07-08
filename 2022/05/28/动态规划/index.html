@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">4.6k</span>
+            <span class="post-count">4.4k</span>
         </span>
     </span>
 
@@ -114,12 +114,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>由于蓝桥杯对DP问题的考察加大，那么DP问题也就成了我们备考蓝桥杯的重点内容。我打算分三次写完DP，第一篇呢是为了让小伙伴们初步理解DP思想，里面的例题是非常经典同时又是非常基础的。<br>蓝桥杯的比赛时间越来越近了，所以最近我会加快备考文章的更新，小伙伴们不要着急噢<del>考前一定会将常考的知识点更新完的。<br>好啦废话不多说，进入我们今天的DP学习吧</del><br><img src="https://img-blog.csdnimg.cn/271c13f4b83844c6bbe7f1160ef512dd.gif#pic_center" alt="在这里插入图片描述"></p>
-</blockquote>
-<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr>
-<h1 id="一、入门——从记忆化搜索说起"><a href="#一、入门——从记忆化搜索说起" class="headerlink" title="一、入门——从记忆化搜索说起"></a>一、入门——从记忆化搜索说起</h1><p>在前面的文章中我们已经对动态规划做了铺垫，不知道小伙伴们还记不记得在讲解搜索算法时我也给大家讲了记忆化搜索，还说记忆化搜索是学习DP思想的基础。有些小伙伴没看过之前的文章，因此呢这篇文章还是要从记忆化搜索说起。</p>
+  <hr>
+<h1 id="一、入门——从记忆化搜索说起"><a href="#一、入门——从记忆化搜索说起" class="headerlink" title="一、入门——从记忆化搜索说起"></a>一、入门——从记忆化搜索说起</h1><p>在前面的文章中我们已经对动态规划做了铺垫，不知道小伙伴们还记不记得在讲解搜索算法时我也给大家讲了记忆化搜索，还说记忆化搜索是学习DP思想的基础。有些小伙伴没看过之前的文章，因此呢这篇文章还是要从记忆化搜索说起。<span id="more"></span></p>
 <p><font face="微软雅黑" color=#FF8C00 size=3> <strong>以斐波那契数列为例，它的第一项为1，第二项为1，从第三项开始，每一项的值都是前面两项的和。让我们求第n项的是多少。对于这个问题，我们从最开始的递归思想来看。</strong></font></p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
 <span class="token punctuation">&#123;</span>

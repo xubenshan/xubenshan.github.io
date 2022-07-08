@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">5k</span>
+            <span class="post-count">4.9k</span>
         </span>
     </span>
 
@@ -115,20 +115,9 @@
     <div class="article-entry" itemprop="articleBody">
        
   <p><img src="https://img-blog.csdnimg.cn/4bf4aceb99db4049a902adddd6fc2a61.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_12,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>hello小伙伴们，我们又见面啦<del>上一篇文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/CCEVV/article/details/122796055?spm=1001.2014.3001.5501">蓝桥杯算法竞赛备考（一）—— 搜索专题（上）（C++）</a>得到了小伙伴们的认可，我真的是喜出望外，小伙伴们的支持是我最大的动力噢</del><br>好啦废话不多说，让我们进入今天的算法学习吧~<br><img src="https://img-blog.csdnimg.cn/e610b5e52d74485a901d735d020f3c6d.png#pic_center" alt="在这里插入图片描述"><br>今天讲的主要有以下几点内容噢！</p>
-<blockquote>
-<ol>
-<li>广度优先搜索的基本思想</li>
-<li>BFS的模板</li>
-<li>BFS经典例题</li>
-<li>记忆化搜索</li>
-</ol>
-</blockquote>
-<hr>
-<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
 <hr>
 <h1 id="一、广度优先搜索（BFS）"><a href="#一、广度优先搜索（BFS）" class="headerlink" title="一、广度优先搜索（BFS）"></a>一、广度优先搜索（BFS）</h1><blockquote>
-<p>深度优先搜索会优先考虑搜索的深度，就是找不到答案不回头。 当答案在解答树中比较稀疏的时候，DFS会陷入过深的情况，搜索很多无效状态，一时半会找不到解，这时候我们就可以用BFS啦~&#x3D;&#x3D;在连通性，最短路问题中常优先考虑BFS&#x3D;&#x3D;。</p>
+<p>深度优先搜索会优先考虑搜索的深度，就是找不到答案不回头。 当答案在解答树中比较稀疏的时候，DFS会陷入过深的情况，搜索很多无效状态，一时半会找不到解，这时候我们就可以用BFS啦~&#x3D;&#x3D;在连通性，最短路问题中常优先考虑BFS&#x3D;&#x3D;。<span id="more"></span></p>
 <p><code>BFS</code>和<code>DFS</code>搜索的顺序是不一样的。<code>DFS</code>前面已经讲到过，是以深度为第一关键词的，也就是说从某个结点出发总是先选择其中一个分支前进，而不管其他的分支，直到碰到死胡同才停止。然后回溯到上一个结点选择其他的分支。<br>而<code>BFS</code>搜索的顺序是这样的，从某个结点出发，总是先依次访问这个结点能直接到达的所有结点，然后再访问这些结点所能直接到达的所有结点，依次类推，直到所有的结点都访问完毕。<br>下面呢我们看一个迷宫，小伙伴们可能会对<code>BFS</code>有一个清晰的认识。<br><img src="https://img-blog.csdnimg.cn/0b2c88445f9746bd8a91f1c198c15bcd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br><code>BFS</code>搜索的顺序是这个样子滴~首先从起点<code>A</code>出发，它能到达的所有结点有<code>B</code>和<code>C</code>（第二层），因此接下来去访问<code>B</code>，<code>B</code>能直接到达<code>D</code>和<code>E</code>（第三层），接下来访问<code>C</code>，<code>C</code>能直接到达<code>F</code>和<code>G</code>（第三层）。第二层访问结束，接下来访问<code>D</code>，<code>D</code>能直接到达<code>I</code>和<code>G</code>和<code>H</code>（第四层）。接下来访问<code>E</code>，<code>E</code>能直接到达<code>M</code>和<code>L</code>和<code>K</code>（第四层），接着访问<code>F</code>，<code>F</code>是死胡同。接下来访问<code>G</code>，<code>G</code>是终点，搜索结束。<br>至于那些未访问过的结点，我们就不用去管它了。</p>
 </blockquote>
 <p>可以看出层数就是从结点A出发到达其他结点的最小步数。&#x3D;&#x3D;广度优先搜索会优先考虑每种状一个专题态的和初始状态的距离，也就是与初始状态越接近的就会越先考虑。这就能保证一个状态被访问时一定是采用的最短路径。&#x3D;&#x3D;</p>
