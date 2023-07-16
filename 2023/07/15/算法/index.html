@@ -1,15 +1,14 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>算法——搜索专题 | 考研er的精神所</title><meta name="author" content="才疏学浅的小熊"><meta name="copyright" content="才疏学浅的小熊"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="写在前面蓝桥杯省赛将在4月初举行，距离比赛也就剩一个多月的时间。为了提高自己的编程能力，在比赛中取得比较👌的成绩。接下来的一个多月我会在博客中更新蓝桥杯的学习。争取在考前将一些重要的算法过一遍。蓝桥杯常考的算法我整理到了一张思维导图里面，小伙伴可以看一下噢。  这张蓝桥杯思维导图可能不太全面，以后会经常补充的。。  我是这样想滴，我会对常考的算法做个专题总结，分专题来讲。文章更新的速度呢取决于">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>考研er的精神所 | 考研er的精神所</title><meta name="author" content="才疏学浅的小熊"><meta name="copyright" content="才疏学浅的小熊"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="搜索专题[TOC] 深度优先搜索(DFS)+回溯DFS是一种搜索的策略，简单来说就是一条路走到黑。当走到尽头之后就回退到上一个结点，继续一条路走到黑。回退的过程就叫做回溯。DFS一般采用递归的方式实现。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法——搜索专题">
+<meta property="og:title" content="考研er的精神所">
 <meta property="og:url" content="http://example.com/2023/07/15/%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="考研er的精神所">
-<meta property="og:description" content="写在前面蓝桥杯省赛将在4月初举行，距离比赛也就剩一个多月的时间。为了提高自己的编程能力，在比赛中取得比较👌的成绩。接下来的一个多月我会在博客中更新蓝桥杯的学习。争取在考前将一些重要的算法过一遍。蓝桥杯常考的算法我整理到了一张思维导图里面，小伙伴可以看一下噢。  这张蓝桥杯思维导图可能不太全面，以后会经常补充的。。  我是这样想滴，我会对常考的算法做个专题总结，分专题来讲。文章更新的速度呢取决于">
+<meta property="og:description" content="搜索专题[TOC] 深度优先搜索(DFS)+回溯DFS是一种搜索的策略，简单来说就是一条路走到黑。当走到尽头之后就回退到上一个结点，继续一条路走到黑。回退的过程就叫做回溯。DFS一般采用递归的方式实现。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/avatar.png">
-<meta property="article:published_time" content="2023-07-15T09:25:19.000Z">
-<meta property="article:modified_time" content="2023-07-15T09:55:54.661Z">
+<meta property="article:published_time" content="2023-07-15T09:40:45.147Z">
+<meta property="article:modified_time" content="2023-07-16T02:11:57.275Z">
 <meta property="article:author" content="才疏学浅的小熊">
-<meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/15/%E7%AE%97%E6%B3%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
@@ -53,12 +52,12 @@
   },
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '算法——搜索专题',
+  title: '考研er的精神所',
   isPost: true,
   isHome: false,
   isHighlightShrink: true,
   isToc: true,
-  postUpdate: '2023-07-15 17:55:54'
+  postUpdate: '2023-07-16 10:11:57'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -162,38 +161,16 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="考研er的精神所"></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">算法——搜索专题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-15T09:25:19.000Z" title="发表于 2023-07-15 17:25:19">2023-07-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-15T09:55:54.661Z" title="更新于 2023-07-15 17:55:54">2023-07-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>18分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="算法——搜索专题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/acdd5d863020486a920cbece48dbe12d.gif#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>蓝桥杯省赛将在4月初举行，距离比赛也就剩一个多月的时间。为了提高自己的编程能力，在比赛中取得比较👌的成绩。接下来的一个多月我会在博客中更新蓝桥杯的学习。争取在考前将一些重要的算法过一遍。<br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/89a67bbb0969467587a73d313071f5bb.gif#pic_center" alt="在这里插入图片描述"><br>蓝桥杯常考的算法我整理到了一张思维导图里面，小伙伴可以看一下噢。<br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/a63bde7e7247449f9b3b780d4ddd2db7.bmp?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>这张蓝桥杯思维导图可能不太全面，以后会经常补充的。。</p>
-</blockquote>
-<p>我是这样想滴，我会对常考的算法做个专题总结，分专题来讲。文章更新的速度呢取决于我刷题的速度啦！ 因为每写一个专题必然要写运用到这种算法的题目啦~~~鲁迅先生说过~~  “只讲解算法思想，不实际运用就是在耍流氓”。写蓝桥杯文章的过程是这个样子的，先确定要写哪个专题，然后呢大量刷题，模板题啦，经典题啦，最最重要的是历届的蓝桥杯真题啦。刷完之后呢做总结理清这种算法的基本思路，最后就形成了一篇蓝桥杯备考文章啦。当然文章是要时常更改补充的，因为在刷题的过程中可能对某些算法思想有了新的感悟~也要参加蓝桥杯的小伙伴们可以一起期待噢，关注我一定不会让你失望的。噢还有我参加的是C++组所以呢我写的题解也是C++的。</p>
-<blockquote>
-<p>我的CSDN博客 <a target="_blank" rel="noopener" href="https://blog.csdn.net/ccevv/">https://blog.csdn.net/ccevv/</a></p>
-</blockquote>
-<hr>
-<p>好啦接下来进入正题。<br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/caa97b1a74dc41959dd23b2ef973a6e6.png#pic_center" alt="在这里插入图片描述"><br>我们知道蓝桥杯俗称暴力杯，搜索在蓝桥杯中是最最基本的算法思想。学会DFS和BFS是在蓝桥杯比赛中取得好成绩的基础。我会从这几个方面入手，给小伙伴们详细讲解搜索专题。<br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/7d631a7e65bb430c9c1015d59f642b96.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>本篇的内容主要有以下几个方面噢，小伙伴们可以有个大致了解。</p>
-<blockquote>
-<p>DFS基本思想(DFS+回溯）<br>深度优先搜索模板<br>DFS例题<br>剪枝思想<br>剪枝思想在DFS中的应用</p>
-</blockquote>
-<hr>
-<p>@[TOC]</p>
-<hr>
-<h2 id="一、深度优先搜索-DFS-回溯"><a href="#一、深度优先搜索-DFS-回溯" class="headerlink" title="一、深度优先搜索(DFS)+回溯"></a>一、深度优先搜索(DFS)+回溯</h2><p><code>DFS</code>是一种搜索的策略，简单来说就是一条路走到黑。当走到尽头之后就回退到上一个结点，继续一条路走到黑。回退的过程就叫做<strong>回溯</strong>。<br><code>DFS</code>一般采用<strong>递归</strong>的方式实现。</p>
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="考研er的精神所"></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-15T09:40:45.147Z" title="发表于 2023-07-15 17:40:45">2023-07-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-16T02:11:57.275Z" title="更新于 2023-07-16 10:11:57">2023-07-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">9.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>35分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="搜索专题"><a href="#搜索专题" class="headerlink" title="搜索专题"></a>搜索专题</h1><p>[TOC]</p>
+<h2 id="深度优先搜索-DFS-回溯"><a href="#深度优先搜索-DFS-回溯" class="headerlink" title="深度优先搜索(DFS)+回溯"></a>深度优先搜索(DFS)+回溯</h2><p><code>DFS</code>是一种搜索的策略，简单来说就是一条路走到黑。当走到尽头之后就回退到上一个结点，继续一条路走到黑。回退的过程就叫做<strong>回溯</strong>。<br><code>DFS</code>一般采用<strong>递归</strong>的方式实现。<span id="more"></span></p>
 <blockquote>
 <p>对递归的详细讲解会在以后出一个独立的专题，小伙伴们可以期待一下噢！</p>
+<p><code>DFS</code>可以用一个递归搜索树来形象描述，那这棵树长什么样子呢，小伙伴们继续往下看。<br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/b46f5fe9bde34fbd907b714c6ea1284c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述" style="zoom: 33%;" /><br>事实上对所有的合法<code>DFS</code>求解过程都可以把它画成树的形式，死胡同就相当于叶子结点。分岔口就相当于非叶子结点。<br>对某个DFS类型的题目，不妨把一些状态作为树的结点，问题就变得很直观了。</p>
+<p><code>DFS</code>搜索的顺序是A-B-D-E-C-F。从结点A出发，它有两条路可以走，我们选择最左边那一条，到达结点B，结点B有两个分支，选择最左边那个，到达结点D。结点D没有路可走了也就是到达死胡同了，返回上一个结点B，也就是回溯的过程。B还有一条路可走，到达结点E。同理结点E回溯到结点B，结点B没有分支了，回溯到上一个结点A，结点A还有一个分支可以走，到达结点C,结点C有一个分支到达结点F，结点F是死胡同。至此所有的结点都访问了，搜索结束。<br>其实DFS的搜索顺序和树的先序遍历是一样的。树的先序遍历就是根左右。</p>
 </blockquote>
-<p><code>DFS</code>可以用一个递归搜索树来形象描述，那这棵树长什么样子呢，小伙伴们继续往下看。<br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/b46f5fe9bde34fbd907b714c6ea1284c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br>事实上对所有的合法<code>DFS</code>求解过程都可以把它画成树的形式，死胡同就相当于叶子结点。分岔口就相当于非叶子结点。</p>
-<blockquote>
-<p>对某个DFS类型的题目，不妨把一些状态作为树的结点，问题就变得很直观了。</p>
-</blockquote>
-<p><code>DFS</code>搜索的顺序是A-B-D-E-C-F。从结点A出发，它有两条路可以走，我们选择最左边那一条，到达结点B，结点B有两个分支，选择最左边那个，到达结点D。结点D没有路可走了也就是到达死胡同了，返回上一个结点B，也就是回溯的过程。B还有一条路可走，到达结点E。同理结点E回溯到结点B，结点B没有分支了，回溯到上一个结点A，结点A还有一个分支可以走，到达结点C,结点C有一个分支到达结点F，结点F是死胡同。至此所有的结点都访问了，搜索结束。</p>
-<blockquote>
-<p>其实DFS的搜索顺序和树的先序遍历是一样的。树的先序遍历就是根左右。</p>
-</blockquote>
-<p>从递归树我们就能看出<code>DFS</code>的时间复杂度是很高的，是$O(2^n)$。所以我们常说暴力搜索嘛，就是因为它时间复杂度太高了，当数据很大时很容易就<code>TLE(</code>超时)的。同时我们还能看出<code>DFS</code>会走遍所有的路径，并且走到死胡同就代表一条完整的路径形成。因此&#x3D;&#x3D;深度优先搜索是一种枚举所有路径，遍历所有情况的搜索策略&#x3D;&#x3D;。</p>
+<p>从递归树我们就能看出<code>DFS</code>的时间复杂度是很高的，是$O(2^n)$。所以我们常说暴力搜索嘛，就是因为它时间复杂度太高了，当数据很大时很容易就<code>TLE(</code>超时)的。同时我们还能看出<code>DFS</code>会走遍所有的路径，并且走到死胡同就代表一条完整的路径形成。因此深度优先搜索是一种枚举所有路径，遍历所有情况的搜索策略。</p>
 <hr>
-<h2 id="二、DFS模板"><a href="#二、DFS模板" class="headerlink" title="二、DFS模板"></a>二、DFS模板</h2><blockquote>
+<h2 id="DFS模板"><a href="#DFS模板" class="headerlink" title="DFS模板"></a>DFS模板</h2><blockquote>
 <p>在备战蓝桥杯的过程中记住一些算法模板还是非常重要滴。</p>
 </blockquote>
 <pre><code class="cpp">#include &lt;iostream&gt;
@@ -224,7 +201,9 @@ void dfs()
 <p>模板不是固定不变的，我们要根据题目灵活地运用它。</p>
 </blockquote>
 <hr>
-<h2 id="三、DFS经典例题"><a href="#三、DFS经典例题" class="headerlink" title="三、DFS经典例题"></a>三、DFS经典例题</h2><h3 id="1-模板题——迷宫问题"><a href="#1-模板题——迷宫问题" class="headerlink" title="1.模板题——迷宫问题"></a>1.模板题——迷宫问题</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1605">题目链接</a><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/76bfafbf85ae400bbf980124689c8b74.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><strong>题目分析</strong></p>
+<h2 id="DFS经典例题"><a href="#DFS经典例题" class="headerlink" title="DFS经典例题"></a>DFS经典例题</h2><h3 id="模板题——迷宫问题"><a href="#模板题——迷宫问题" class="headerlink" title="模板题——迷宫问题"></a>模板题——迷宫问题</h3><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/76bfafbf85ae400bbf980124689c8b74.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" style="zoom:67%;" />
+
+<p><strong>题目分析</strong></p>
 <blockquote>
 <p>迷宫问题是拿来练习DFS与BFS很经典的题目。迷宫问题有很多种问法，比如迷宫从起点到终点有没有路径，有几条，最短路径是多少。</p>
 </blockquote>
@@ -312,8 +291,7 @@ int ans;
 int sx, sy, fx, fy, l, r;
 //bool visited[N][N];
 int map[N][N];//map[i][j] == 1表示是障碍
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-bool check(int x, int y)//判断某点是否可以访问
+                                                                                       bool check(int x, int y)//判断某点是否可以访问
 &#123;
     if (x &lt; 1 || x &gt; n || y &lt; 1 || y &gt; n) return false;
     if (map[x][y] || map[x][y] == 3 ) return false;//该点是障碍点或已经访问过，不能访问
@@ -357,11 +335,13 @@ int main()
 &#125;
 </code></pre>
 <p><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/f0d98badf856489392bc3a7bfad24d98.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h3 id="2-01背包问题-DFS暴力搜索"><a href="#2-01背包问题-DFS暴力搜索" class="headerlink" title="2.01背包问题(DFS暴力搜索)"></a>2.01背包问题(DFS暴力搜索)</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/2/">题目链接</a><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/597a9a9e51c24576a62a7ad2d74e9b21.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="背包问题"><br><strong>题目分析</strong></p>
+<h3 id="01背包问题-DFS暴力搜索"><a href="#01背包问题-DFS暴力搜索" class="headerlink" title="01背包问题(DFS暴力搜索)"></a>01背包问题(DFS暴力搜索)</h3><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/597a9a9e51c24576a62a7ad2d74e9b21.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="背包问题" style="zoom:67%;" />
+
+<p><strong>题目分析</strong></p>
 <blockquote>
 <p>01背包问题是一个很经典的问题，它有多种解法。DFS是其中一种，在学习动态规划的时候还会提到它噢。</p>
-</blockquote>
 <p>第i件物品无非就是选和不选两种情况，在搜索的过程中DFS函数必须要记录当前处理的物品编号<code>index</code>，当前背包的容量<code>sumW</code>，当前的总价值<code>sumC</code>。</p>
+</blockquote>
 <ul>
 <li>当不选第<code>index</code>个物品时，那么<code>sumW</code>,<code>sumC</code>是不变的，接着处理第<code>index+1</code>个物品，也就是<code>DFS(index+1, sumW, sumC)</code>。</li>
 <li>当选择第<code>index</code>个物品时，<code>sumW</code>变成<code>sumW+w[index]</code>，<code>sumC</code>变成<code>sumC+v[index]</code>，接着处理第<code>index+1</code>个物品，也就是<code>DFS(index+1, sumW+w[index],sumC+v[index])</code>。边界条件也就是把最后一件物品也处理完了，即<code>index=n</code>（注意默认index从0开始）。</li>
@@ -407,16 +387,19 @@ int main()
 <blockquote>
 <p>当然了01背包问题如果用<code>DFS</code>来解决的话，当数据比较大时，是不能<code>AC</code>的。这道题会超出时间限制。即便经过剪枝也是无能为力的。</p>
 </blockquote>
-<p><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/b9204460d99f411dae0c590f14f4196a.png" alt="在这里插入图片描述"></p>
-<h3 id="3-回溯——-USACO1-5-八皇后-Checker-Challenge"><a href="#3-回溯——-USACO1-5-八皇后-Checker-Challenge" class="headerlink" title="3.回溯——[USACO1.5]八皇后 Checker Challenge"></a>3.回溯——[USACO1.5]八皇后 Checker Challenge</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1219">题目链接</a><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/e0392de0426f4359962c51f77cf5484f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/d9ae3a9ad53f44418de0d2a2f06c8c4b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><strong>题目分析</strong></p>
+<p><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/b9204460d99f411dae0c590f14f4196a.png" alt="在这里插入图片描述"></p>
+<h3 id="回溯——-USACO1-5-八皇后"><a href="#回溯——-USACO1-5-八皇后" class="headerlink" title="回溯——[USACO1.5]八皇后"></a>回溯——[USACO1.5]八皇后</h3><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/e0392de0426f4359962c51f77cf5484f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" style="zoom:67%;" />
+<img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/d9ae3a9ad53f44418de0d2a2f06c8c4b.png" alt="在这里插入图片描述" style="zoom:67%;" />
+
+<p><strong>题目分析</strong></p>
 <blockquote>
 <p>八皇后问题是学习回溯很经典的例题，这道题是八皇后问题的扩展，N皇后问题。也就是棋盘的大小是任意的。</p>
 </blockquote>
 <p>这道题<code>DFS</code>的思路还是比较清晰的，每行有且只有一个棋子，那么<code>DFS</code>可以记录下当前处理的是第几行的棋子。假设当前处理的是第<code>i</code>行的棋子，那么要枚举处在该行的棋子位置，判断哪个是合法的。<br>什么样的位置算是合法的呢，这个位置的列还有左对角线，右对角线位置都不能有棋子。那么又该如何表示这些位置呢？我们采用一维数组来分别表示列，左对角线，右对角线。列很好表示就是<code>b[j]</code>，左对角线我们可以发现行减去列的绝对值是恒定的，即<code>c[i-j+n]</code>,右对角线行加列是恒定的。即<code>d[i+j]</code>。</p>
 <blockquote>
 <p>小伙伴们可以自己画画图看一看噢~</p>
-</blockquote>
 <p>当某位置放置了棋子，那么就将和它同列同对角线的位置都取为1，即<code>b[j]=1</code>,<code>c[i-j+n]=1</code>,<code>d[i+j]=1</code>。</p>
+</blockquote>
 <p><strong>AC代码</strong></p>
 <pre><code class="cpp">#include &lt;iostream&gt;
 using namespace std;
@@ -471,12 +454,15 @@ int main()
     return 0;
 &#125;
 </code></pre>
-<p><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/c37e19018b064ee88491028af5bec829.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h3 id="4-递归实现排列型枚举"><a href="#4-递归实现排列型枚举" class="headerlink" title="4.递归实现排列型枚举"></a>4.递归实现排列型枚举</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/96/">题目链接</a><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/93f1e3da7444452c827100778284df39.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><strong>题目分析</strong></p>
+<p><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/c37e19018b064ee88491028af5bec829.png" alt="在这里插入图片描述"></p>
+<h3 id="递归实现排列型枚举"><a href="#递归实现排列型枚举" class="headerlink" title="递归实现排列型枚举"></a>递归实现排列型枚举</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/96/">题目链接</a></p>
+<img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/93f1e3da7444452c827100778284df39.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" style="zoom:67%;" />
+
+<p><strong>题目分析</strong></p>
 <blockquote>
 <p>DFS可以用来处理排列组合问题。</p>
-</blockquote>
 <p>对于全排列问题我们可以这样想，第1个位置可以放<code>1~n</code>任意一个数，第2个位置可以放除了放在第1个位置的数以外的任何一个数，以此类推。因此我们可以画出一个递归搜索树，用<code>map[]</code>来表示储存当前排列。<code>DFS</code>函数要记住当前处理的是第<code>index</code>个位置，从1到n进行遍历，看看这个数是否可以放在第<code>index</code>个位置，需要有一个判重数组<code>hashtable[x]</code>来记录<code>x</code>是否在排列里面。</p>
+</blockquote>
 <p><strong>AC代码</strong></p>
 <pre><code class="cpp">#include &lt;iostream&gt;
 using namespace std;
@@ -518,8 +504,14 @@ int main()
     return 0;
 &#125;
 </code></pre>
-<p><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/de6462dec44d47daa0afa1023d8a0c89.png" alt="在这里插入图片描述"></p>
-<h3 id="5-递归实现组合型枚举"><a href="#5-递归实现组合型枚举" class="headerlink" title="5.递归实现组合型枚举"></a>5.递归实现组合型枚举</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/95/">题目链接</a><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/e84e6dee11d64d5688a7e07c419aa54b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/36278db485514eff94f4487f54653173.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><strong>题目分析</strong><br>组合和排列的最大区别就是组合不需要考虑顺序，也就是说<code>123</code>和<code>132</code>是一样的。<br>由于题目要求同一行的数必须按升序排序，因此可以让<code>DFS</code>函数记录当前处理的第<code>index</code>个位置，可以选的最小数<code>start</code>。</p>
+<p><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/de6462dec44d47daa0afa1023d8a0c89.png" alt="在这里插入图片描述"></p>
+<h3 id="递归实现组合型枚举"><a href="#递归实现组合型枚举" class="headerlink" title="递归实现组合型枚举"></a>递归实现组合型枚举</h3><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/e84e6dee11d64d5688a7e07c419aa54b.png" alt="在这里插入图片描述" style="zoom: 67%;" />
+<img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/36278db485514eff94f4487f54653173.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" style="zoom:67%;" />
+
+
+
+<p><strong>题目分析</strong></p>
+<p>组合和排列的最大区别就是组合不需要考虑顺序，也就是说<code>123</code>和<code>132</code>是一样的。<br>由于题目要求同一行的数必须按升序排序，因此可以让<code>DFS</code>函数记录当前处理的第<code>index</code>个位置，可以选的最小数<code>start</code>。</p>
 <blockquote>
 <p>虽然参数变成了两个，但是不需要判重数组了。</p>
 </blockquote>
@@ -563,11 +555,11 @@ int main()
     return 0;
 &#125;
 </code></pre>
-<p><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/353f2858c0d24affbfb1c9307427a79c.png" alt="在这里插入图片描述"></p>
+<p><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/353f2858c0d24affbfb1c9307427a79c.png" alt="在这里插入图片描述"></p>
 <hr>
-<h2 id="四、剪枝思想"><a href="#四、剪枝思想" class="headerlink" title="四、剪枝思想"></a>四、剪枝思想</h2><p>前面也提到过剪枝的概念，现在详细说下剪枝这种东西。我们知道<code>DFS</code>时间复杂度是很高的，如果不进行一些优化的话，在数据很大的情况下很容易就爆<code>TLE</code>。这个时候我们就可以用剪枝这种东西来优化啦~<br>在进行<code>DFS</code>的过程中对某条可以确定不存在解的分支采用直接剪短的策略。这样会大大降低计算量。一个搜索树剪掉一些分支就形象的叫它剪枝了。<br>&#x3D;&#x3D;剪枝一般都是利用题目的限制条件来确定哪些分支是不可能存在解的。&#x3D;&#x3D;</p>
+<h2 id="剪枝思想"><a href="#剪枝思想" class="headerlink" title="剪枝思想"></a>剪枝思想</h2><p>前面也提到过剪枝的概念，现在详细说下剪枝这种东西。我们知道<code>DFS</code>时间复杂度是很高的，如果不进行一些优化的话，在数据很大的情况下很容易就爆<code>TLE</code>。这个时候我们就可以用剪枝这种东西来优化啦~<br>在进行<code>DFS</code>的过程中对某条可以确定不存在解的分支采用直接剪短的策略。这样会大大降低计算量。一个搜索树剪掉一些分支就形象的叫它剪枝了。<br>&#x3D;&#x3D;剪枝一般都是利用题目的限制条件来确定哪些分支是不可能存在解的。&#x3D;&#x3D;</p>
 <hr>
-<h2 id="五、剪枝思想在DFS中的应用"><a href="#五、剪枝思想在DFS中的应用" class="headerlink" title="五、剪枝思想在DFS中的应用"></a>五、剪枝思想在DFS中的应用</h2><p>小伙伴们来回忆下01背包问题，我们是在选择完所有物品后才进行判断，看看背包总体积是否超过背包容量。是不是可以在选择的过程中就加入这一判断，这样就可以减少很多的计算量。当选第<code>index</code>件物品时，如果选上它那么背包的总体积就超出背包容量，我们一定不能选了。此时选第<code>index</code>件物品的分支就不可能存在解，直接剪掉。</p>
+<h2 id="剪枝思想在DFS中的应用"><a href="#剪枝思想在DFS中的应用" class="headerlink" title="剪枝思想在DFS中的应用"></a>剪枝思想在DFS中的应用</h2><p>小伙伴们来回忆下01背包问题，我们是在选择完所有物品后才进行判断，看看背包总体积是否超过背包容量。是不是可以在选择的过程中就加入这一判断，这样就可以减少很多的计算量。当选第<code>index</code>件物品时，如果选上它那么背包的总体积就超出背包容量，我们一定不能选了。此时选第<code>index</code>件物品的分支就不可能存在解，直接剪掉。</p>
 <pre><code class="cpp">//DFS维护三个参数，正在选第index个物品，当前的总体积，当前的总价值
 void dfs(int index, int sumW, int sumC)
 &#123;
@@ -609,20 +601,533 @@ void dfs(int index, int sumW, int sumC)
 &#125;
 </code></pre>
 <blockquote>
-<p>通过下表我们能看出剪枝之后的运行速度确实快了不少。<br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/3f184725aed44b37bdb9b40924995a4b.png" alt="在这里插入图片描述"></p>
+<p>通过下表我们能看出剪枝之后的运行速度确实快了不少。<br><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/3f184725aed44b37bdb9b40924995a4b.png" alt="在这里插入图片描述"></p>
 </blockquote>
 <hr>
-<h1 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h1><blockquote>
+<h2 id="广度优先搜索（BFS）"><a href="#广度优先搜索（BFS）" class="headerlink" title="广度优先搜索（BFS）"></a>广度优先搜索（BFS）</h2><blockquote>
+<p>深度优先搜索会优先考虑搜索的深度，就是找不到答案不回头。 当答案在解答树中比较稀疏的时候，DFS会陷入过深的情况，搜索很多无效状态，一时半会找不到解，这时候我们就可以用BFS啦~&#x3D;&#x3D;在连通性，最短路问题中常优先考虑BFS&#x3D;&#x3D;。<!--more--></p>
+<p><code>BFS</code>和<code>DFS</code>搜索的顺序是不一样的。<code>DFS</code>前面已经讲到过，是以深度为第一关键词的，也就是说从某个结点出发总是先选择其中一个分支前进，而不管其他的分支，直到碰到死胡同才停止。然后回溯到上一个结点选择其他的分支。<br>而<code>BFS</code>搜索的顺序是这样的，从某个结点出发，总是先依次访问这个结点能直接到达的所有结点，然后再访问这些结点所能直接到达的所有结点，依次类推，直到所有的结点都访问完毕。<br>下面呢我们看一个迷宫，小伙伴们可能会对<code>BFS</code>有一个清晰的认识。<br><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/0b2c88445f9746bd8a91f1c198c15bcd.png" alt="在这里插入图片描述" style="zoom:67%;" /><br><code>BFS</code>搜索的顺序是这个样子滴~首先从起点<code>A</code>出发，它能到达的所有结点有<code>B</code>和<code>C</code>（第二层），因此接下来去访问<code>B</code>，<code>B</code>能直接到达<code>D</code>和<code>E</code>（第三层），接下来访问<code>C</code>，<code>C</code>能直接到达<code>F</code>和<code>G</code>（第三层）。第二层访问结束，接下来访问<code>D</code>，<code>D</code>能直接到达<code>I</code>和<code>G</code>和<code>H</code>（第四层）。接下来访问<code>E</code>，<code>E</code>能直接到达<code>M</code>和<code>L</code>和<code>K</code>（第四层），接着访问<code>F</code>，<code>F</code>是死胡同。接下来访问<code>G</code>，<code>G</code>是终点，搜索结束。<br>至于那些未访问过的结点，我们就不用去管它了。</p>
+</blockquote>
+<p>可以看出层数就是从结点A出发到达其他结点的最小步数。&#x3D;&#x3D;广度优先搜索会优先考虑每种状一个专题态的和初始状态的距离，也就是与初始状态越接近的就会越先考虑。这就能保证一个状态被访问时一定是采用的最短路径。&#x3D;&#x3D;</p>
+<blockquote>
+<p>其实DFS和BFS都可以从树的角度去分析。<br><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/1b178bcc540c44758a7c0b3504204c0f.png" alt="在这里插入图片描述" style="zoom:67%;" /><br><code>DFS</code>相当于树的先序遍历，<code>BFS</code>相当于树的层次遍历。<br><code>DFS</code>搜索顺序是<code>123456 </code> ，<code>BFS</code>搜索顺序是<code>125346</code>。<br>相信小伙伴们很容易就能看出来~</p>
+</blockquote>
+<hr>
+<h2 id="用队列来实现BFS（模板）"><a href="#用队列来实现BFS（模板）" class="headerlink" title="用队列来实现BFS（模板）"></a>用队列来实现BFS（模板）</h2><p><code>BFS</code>的搜索过程很像一个队列，队列的特点就是先进先出。谁入队早就先访问谁。<br>我们简单的来分析一下队列模拟的过程~</p>
+<ul>
+<li>先把起点<code>A</code>入队，取出队首<code>A</code>，将<code>A</code>直接到达的<code>B</code>和<code>C</code>入队。队列元素有{<code>B</code>，<code>C</code>}。</li>
+<li>再将队首<code>B</code>取出，将<code>B</code>直接到达的<code>D</code>和<code>E</code>入队。此时队列元素有{<code>C</code>，<code>D</code>，<code>E</code>}。</li>
+<li>再将队首<code>C</code>出队，将<code>C</code>直接到达的<code>F</code>和<code>G</code>入队。此时队列元素有{<code>D</code>，<code>E</code>，<code>F</code>，<code>G</code>}。</li>
+<li>再将队首<code>D</code>出队，将<code>D</code>直接到达的<code>I</code>和<code>J</code>和<code>H</code>入队。此时队列元素有{<code>E</code>，<code>F</code>，<code>G</code>，<code>I</code>，<code>J</code>，<code>H</code>}。</li>
+<li>再将队首<code>E</code>出队，将<code>E</code>直接到达的<code>M</code>和<code>L</code>和<code>K</code>入队。此时队列元素有{<code>F</code>，<code>G</code>，<code>I</code>，<code>J</code>，<code>H</code>，<code>M</code>，<code>L</code>，<code>K</code>。</li>
+<li>再将队首<code>F</code>出队，<code>F</code>没有直接相连的新节点，此时队列元素有{<code>G</code>，<code>I</code>，<code>J</code>，<code>H</code>，<code>M</code>，<code>L</code>，<code>K</code>}。</li>
+<li>再将<code>G</code>出队，找到终点，算法结束。</li>
+</ul>
+<p>下面给出<code>BFS</code>的模板。</p>
+<blockquote>
+<p>还是那句话多记些模板对比赛是很有帮助的噢~</p>
+</blockquote>
+<pre><code class="cpp">void bfs()
+&#123;
+    queue&lt;int&gt; q;//一般用stl库中的queue来实现队列比较方便
+    q.push(起点S);//将初始状态入队
+    标记初始状态已入队。
+    while(!q.empty())//队列不为空就执行入队出队操作
+    &#123;
+        top = q.front();//取出队首
+        q.pop();//队首出队
+        for (枚举所有可扩展的状态)
+        &#123;
+            if (check())//状态合法
+            &#123;
+                q.push(temp);//状态入队
+                标记成已入队。
+            &#125;
+            
+        &#125;
+    &#125;
+</code></pre>
+<p>对模板做几点说明</p>
+<ol>
+<li>建议大家用<code>stl</code>中的<code>queue</code>表示队列。操作方便。头文件要加<code>#include&lt;queue&gt;</code></li>
+<li>要区分<code>front()</code>和<code>pop()</code>的区别,<code>front</code>的返回值是队首元素，而<code>pop</code>没有返回值。</li>
+<li>我们常用一个新变量来储存队首元素，以便在它出队后方便下面的操作。<br><code>top = q.front()</code>。</li>
+</ol>
+<p>还有一个问题，我们在使用<code>BFS</code>时会设一个<code>inq</code>数组记录结点有没有入队，为什么不是记录结点有没有访问呢，不知道小伙伴们想没想过这个问题。<br>区别在于，设置成结点是否已访问，会导致有些点在队列中但是还没有被访问，由于其他结点可以到达它而将这个结点入队，导致很多结点重复入队，这是很不明智的。</p>
+<blockquote>
+<p>以后也会专门出一篇讲解比赛中常用的<code>STL</code>标准模板库。<br>上面对<code>BFS</code>的讲解参考胡凡《算法笔记》并补充了自己对<code>BFS</code>的理解。</p>
+</blockquote>
+<hr>
+<h2 id="BFS经典例题"><a href="#BFS经典例题" class="headerlink" title="BFS经典例题"></a>BFS经典例题</h2><h3 id="模板题——迷宫最短路"><a href="#模板题——迷宫最短路" class="headerlink" title="模板题——迷宫最短路"></a>模板题——迷宫最短路</h3><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/c246c1cf991841aba4edc48ba8f4781a.png#pic_center" alt="在这里插入图片描述" style="zoom: 80%;" />
+<img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/83334f78d36a4bba82a18100494088a4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述" style="zoom:67%;" />
+
+<p><strong>题目分析</strong></p>
+<p>该题是要求从起点到终点的最小步数。我们可以有两种解决方案，<code>DFS</code>和<code>BFS</code>。</p>
+<ul>
+<li>可以<code>DFS</code>所有从起点到终点的所有路径，然后取路径最短的那条。</li>
+<li><code>BFS</code>是很理所当然的，因为求的是最小步数，涉及&#x3D;&#x3D;最短问题&#x3D;&#x3D;。</li>
+</ul>
+<p>我们先来看一下<code>BFS</code>该如何解决这个问题。因为是板子题嘛直接照着模板敲就好了~</p>
+<p> <strong>AC代码（BFS）</strong></p>
+<pre><code class="cpp">//bfs 广度优先搜索
+//迷宫问题 求解最短路径
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+
+using namespace std;
+
+const int N = 100;
+int n, m;//n行m列
+char maze[N][N];//迷宫
+bool inq[N][N];//记录位置(x,y)是否入队
+int x[4] = &#123;-1, 1, 0, 0&#125;;//增量数组
+int y[4] = &#123;0, 0, -1, 1&#125;;
+
+struct node
+&#123;
+    int x, y;
+    int step;
+&#125;s, t, Node;//s起点 t终点 Node临时节点
+
+bool test(int x, int y)//判断位置(x,y)是否有效
+&#123; //以下三种情况不能入队
+    if (x &gt;= n || x &lt; 0 || y &gt;= m || y &lt; 0) return false;//出界
+    if (maze[x][y] == &#39;*&#39;) return false;//墙壁
+    if (inq[x][y] == true) return false;//已入队
+    return true;//其余情况可以将该点入队
+&#125;
+
+int bfs()
+&#123;
+    queue&lt;node&gt; q;//定义队列
+    q.push(s);//将起点入队
+    while(!q.empty())//队列不为空执行
+    &#123;
+        node top = q.front();//取出队首元素
+        q.pop();//出队
+        //inq[s.x][s.y] = true;//将起点设为已入队
+        if (top.x == t.x &amp;&amp; top.y == t.y)//到达终点
+        &#123;
+            return top.step;返回终点的层数，即最少步数
+        &#125;
+        for (int i = 0; i &lt; 4; i++)//枚举四个方向
+        &#123;	
+            int newX = top.x + x[i];
+            int newY = top.y + y[i];
+            if (test(newX, newY))//下一个点合法
+            &#123;
+                Node.x = newX; Node.y = newY;
+                Node.step = top.step + 1;//层数加1
+                q.push(Node);//将该点入队//或q.push((Node)&#123;newX,newY&#125;);  
+                inq[newX][newY] = true;//标记成已入队
+            &#125;
+        &#125;
+    &#125;
+    return 0;
+&#125;
+
+int main()
+&#123;
+    cin &gt;&gt; n &gt;&gt; m;
+    for (int i = 0; i &lt; n; i++)
+    &#123;
+        getchar();//过滤掉每行的换行，不加这句是不能AC的
+        for (int j = 0; j &lt; m; j++)
+        &#123;
+            maze[i][j] = getchar();//读入数据
+        &#125;
+    &#125;
+    cin &gt;&gt; s.x &gt;&gt; s.y &gt;&gt; t.x &gt;&gt; t.y;
+    s.step = 0;
+    cout &lt;&lt; bfs() &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p>我们再来看一下如何用<code>DFS</code>来解决这个问题。用<code>DFS</code>搜索出所有可以从起点到终点的路径，并记录步数。DFS函数记录当前搜索的点的坐标<code>(x,y)</code>和所用步数<code>step</code>。用一个变量<code>minsize</code>更新最小步数<code>minsize = min(minsize, step)</code>。其余的操作其实和上一篇文章的迷宫问题求方案数是差不多的啦。小伙伴们还是不懂的话可以去看前一篇文章呀~</p>
+<p><strong>AC代码（DFS）</strong></p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+//用PII来代替，书写方便，记得加头文件#include &lt;map&gt;
+typedef pair&lt;int, int&gt; PII;
+const int N = 100;
+char maze[N][N];
+int minsize = 10000;//更新最少步数
+int n, m;
+int dx[4] = &#123;-1, 1, 0, 0&#125;;
+int dy[4] = &#123;0, 0, -1, 1&#125;;
+bool visited[N][N];//标记某点是否已访问过
+PII s, t;//起点，终点
+
+bool check(int x, int y)//判断位置(x,y)是否有效
+&#123;
+    if (x &gt;= n || x &lt; 0 || y &gt;= m || y &lt; 0) return false;
+    if (maze[x][y] == &#39;*&#39;) return false;
+    if (visited[x][y] == true) return false;
+    return true;
+&#125;
+
+void dfs(int x, int y, int step)
+&#123;
+    if (x == t.first &amp;&amp; y == t.second)//到达终点
+    &#123;
+        minsize = min(minsize, step);/更新最少步数
+        return;
+    &#125;
+    for (int i = 0; i &lt; 4; i++)
+    &#123;
+        int newx = x + dx[i];
+        int newy = y + dy[i];
+        if (check(newx, newy))//下一个点合法
+        &#123;
+            visited[x][y] = true;//修改现场
+            dfs(newx, newy, step + 1);//搜索下一个点
+            visited[x][y] = false;//还原现场
+        &#125;  
+    &#125;
+&#125;
+
+int main()
+&#123;
+    cin &gt;&gt; n &gt;&gt; m;
+    for (int i = 0; i &lt; n; i++)
+    &#123;
+        getchar();
+        for (int j = 0; j &lt; m; j++)
+        &#123;
+            maze[i][j] = getchar();
+        &#125;
+    &#125;
+    cin &gt;&gt; s.first &gt;&gt; s.second &gt;&gt; t.first &gt;&gt; t.second;
+    dfs(s.first, s.second, 0);
+    cout &lt;&lt; minsize &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<blockquote>
+<p>对上述代码做几点说明</p>
+<ul>
+<li>里面用到了<code>STL</code>中的<code>pair</code>。当想要将两个元素绑在一起作为一个元素时，又不想因此定义一个结构体，那么就可以用<code>pair</code>这个小玩意啦~&#96;pair<code>里面有两个元素，类型是可以自定义的，分别是</code>first<code>,</code>second<code>。 *要注意</code>minsize<code>初始化要大一些，这样才能更新最小。 *</code>DFS<code>求解最短路问题是没有优势的。显而易见，</code>DFS<code>会搜索所有的路径，然后求出最小步数，搜索了很多无效状态，效率是非常低的，很容易就</code>TLE&#96;。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="马的遍历"><a href="#马的遍历" class="headerlink" title="马的遍历"></a>马的遍历</h3><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/a05b6ed800fa4aeaa94f7e05612a2caf.png" alt="在这里插入图片描述" style="zoom:67%;" />
+
+<p><strong>题目分析</strong></p>
+<p>这道题其实和前面那一道很相似，前面那一道是求从起点到终点的最短步数，而这道是求从起点(马的位置)到各个点(棋盘各个点)的最短步数。<br>那么该怎么办呢<del>很简单，从马的位置点<code>(x, y)</code>开始<code>BFS</code>，用一个<code>ans</code>数组来记录起点到达各个点时的层数，也就是最短步数。最后输出ans即可。<br>题目本身的思路还是很好想滴</del>还是有些地方需要注意一下。</p>
+<ol>
+<li>棋盘上的一个马的走法是有规则的，俗称”马走日”。</li>
+</ol>
+<img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/c2656987a802484e86fbbd4d4692d2f9.png" alt="在这里插入图片描述" style="zoom:67%;" />
+
+<p>一个马可以走的位置已经用圆圈圈住啦~八个偏移量(-2,1),(-2,-1),(-1,2),(-1,-2),(2,1),(2,-1),(1,2),(1,-2)。我们可以用方向数组来表示：</p>
+<ul>
+<li><code>int dx[8]=&#123;-2,-2,-1,-1,2,2,1,1&#125;;</code></li>
+<li><code>int dy[8]=&#123;1,-1,2,-2,1,-1,2,-2&#125;;</code></li>
+</ul>
+<ol start="2">
+<li>输出格式要求左对齐，宽5格。</li>
+</ol>
+<ul>
+<li><code>printf(&quot;%-5d&quot;, ans[i][j]);</code></li>
+<li><code>cout&lt;&lt;left&lt;&lt;setw(5)&lt;&lt;a[i][j]</code>但要加头文件<code>#include&lt;iomanip&gt;</code></li>
+</ul>
+<blockquote>
+<p>第二个<code>cout</code>的写法大家可以试一试可不可以通过，这是我在洛谷题解里面找到的。还是推荐第一种<code>printf</code>的写法。</p>
+</blockquote>
+<ol start="3">
+<li>由于到达不了的地方要输出-1,所以我们要将<code>ans</code>数组初始化成-1。技巧<code>memset(ans, -1,sizeof(ans));</code>。</li>
+</ol>
+<blockquote>
+<p>像一些方向数组，初始化数组等一些小技巧小伙伴们要好好整理一下噢，可以提高代码的效率和简洁性。</p>
+</blockquote>
+<p><strong>AC代码</strong></p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;iomanip&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+const int N = 450;
+int n, m;
+int ans[N][N];//储存到达每点的最少步数
+bool inq[N][N];//标记是否已入队
+int dx[8]=&#123;-2,-2,-1,-1,2,2,1,1&#125;;
+int dy[8]=&#123;1,-1,2,-2,1,-1,2,-2&#125;;//坐标偏移量
+struct node
+&#123;
+    int x;
+    int y;
+&#125;s, Node;
+
+bool check(int x, int y)
+&#123;
+    if (x &lt;= 0 || x &gt; n || y &lt;= 0 || y &gt; m) return false;//出界
+    if (inq[x][y] == true) return false;//已入队
+    return true;
+&#125;
+
+void bfs()
+&#123;
+    queue&lt;node&gt; q;
+    q.push(s);//起点入队
+    inq[s.x][s.y] = true;//标记起点已入队
+    while(!q.empty())
+    &#123;
+        node top = q.front();
+        q.pop();
+        for (int i = 0; i &lt;= 7; i++)
+        &#123;
+            int newx = top.x + dx[i];
+            int newy = top.y + dy[i];         
+            if (check(newx, newy))
+            &#123;
+                Node.x = newx; Node.y = newy;
+                q.push(Node);
+                //(Node.x,Node,y)的层数就是队头层数+1，即最短步数。
+                ans[Node.x][Node.y] = ans[top.x][top.y] + 1;
+                inq[Node.x][Node.y] = true;//标记已入队
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+int main()
+&#123;
+    memset(ans,-1,sizeof(ans));//将ans数组都设为-1
+    cin &gt;&gt; n &gt;&gt; m &gt;&gt; s.x &gt;&gt; s.y;
+    ans[s.x][s.y] = 0;
+    bfs();
+    for (int i = 1; i &lt;= n; i++)
+    &#123;
+        for (int j = 1; j &lt;= m; j++)
+        &#123;
+          printf(&quot;%-5d&quot;, ans[i][j]);
+        &#125;
+        printf(&quot;\n&quot;);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/9aa86a15f585415685875f4cd463319f.png" alt="在这里插入图片描述" style="zoom:67%;" />
+
+<blockquote>
+<p>当然为了节省空间这道题也可以只开一个<code>ans</code>数组。来记录最少步数和是否已入队。</p>
+<ul>
+<li><code>ans[x][y] != -1 </code>说明<code>(x,y)</code>点已入队；</li>
+<li><code>ans[x][y] == -1</code>说明<code>(x,y)</code>点未入队。<br>具体代码这里就不再赘述了噢~</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="块的个数"><a href="#块的个数" class="headerlink" title="块的个数"></a>块的个数</h3><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/e6222f074a9341f99fc5ab735a2f2658.png" alt="在这里插入图片描述" style="zoom:67%;" />
+
+<p><strong>题目分析</strong></p>
+<blockquote>
+<p>这道题貌似有个名字叫连通块问题。</p>
+</blockquote>
+<p>这道题难了我好长时间，我觉得有些小伙伴肯定也会在这道题上卡一下。主要是题目意思有点难理解。我开始的时候以为块是只十字架结构的1，也就是1的上下左右都是1，然后这些1构成的就是一个块。然后看样例发现块数不太对。样例是4块。</p>
+<p>经过长时间的绞尽脑汁的琢磨（原谅我的菜）,我才明白块说的是从某个1开始，看它的上下左右有没有1，有1的话就在看这些1的上下左右有没有1，依次类推，直到找不到1为止。这么说呢可能小伙伴们还是不太懂，那么我们举个例子吧~</p>
+<img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/30f34f3483ec4dd78ea62716fda0080c.png" alt="在这里插入图片描述" style="zoom:67%;" />
+样例中的四块是用圆圈圈住的这四个。以最上面的那个为例，从最左边的1开始搜索，它的右边有1个1。这个1的右边和下边有1。这些1的上下左右就没有新的1了。因此这些1组成一个块。说到这大家应该明白了许多hh~。
+
+<p>我们还可以发现单独的1也可以是一个块，不然这题答案就是3了。<br>理解了题意，思路也就很好想了。我们可以<code>BFS</code>某个1，找出与它符合块条件的所有1，通过<code>BFS</code>将这些1标记下来，进而可以不重复的搜索块的个数。</p>
+<p><strong>AC代码</strong></p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;map&gt;
+
+using namespace std;
+
+const int N = 1000;
+typedef pair&lt;int, int&gt; PII;
+int m, n;
+int maze[N][N];//矩阵
+bool inq[N][N];//记录(x,y)是否已入队
+int dx[4] = &#123;-1, 1, 0, 0&#125;;
+int dy[4] = &#123;0, 0, -1, 1&#125;;
+int ans;
+
+bool check(int x, int y)
+&#123;
+    if (maze[x][y] == 0) return false;//不能访问0
+    if (inq[x][y] == true) return false;
+    if (x &lt; 1 || x &gt; m || y &lt; 1 || y &gt; n) return false;
+    return true;
+&#125;
+
+void bfs(int x, int y)//bfs的作用就是将一个块内的所有1标记一下。
+&#123;
+    PII node;
+    node.first = x;
+    node.second = y;
+    queue&lt;PII&gt; q;
+    q.push(node);
+    inq[x][y] = true;
+
+    while (!q.empty())
+    &#123;
+        PII temp = q.front();
+        q.pop();
+        for (int i = 0; i &lt; 4; i++)
+        &#123;
+            node.first = temp.first + dx[i];
+            node.second = temp.second + dy[i];
+            if (check(node.first, node.second))
+            &#123;
+                q.push(node);
+                inq[node.first][node.second] = true;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+int main()
+&#123;
+    cin &gt;&gt; m &gt;&gt; n;
+    for (int i = 1; i &lt;= m; i++)
+    &#123;
+        for (int j = 1; j &lt;= n; j++)
+        &#123;
+            cin &gt;&gt; maze[i][j];
+        &#125;
+    &#125;
+     for (int i = 1; i &lt;= m; i++)
+    &#123;
+        for (int j = 1; j &lt;= n; j++)
+        &#123;	//0肯定不搜索，搜索过的也不搜索
+            if (maze[i][j] == 1 &amp;&amp; inq[i][j] == false)
+            &#123;
+                ans++;
+                bfs(i, j);
+            &#125;
+        &#125;
+    &#125;
+    cout &lt;&lt; ans &lt;&lt; endl;
+&#125;
+</code></pre>
+<blockquote>
+<p>BFS的做法相对来说还是比较固定的，所以注释有些重复的简单的我就不再写了。<br>大家可以尝试用DFS来做一下这道题噢~ 一道题用不同的解法才能看出算法的魅力！<br><a target="_blank" rel="noopener" href="https://paste.ubuntu.com/p/xXb7Pbqrmb/">DFS解答的代码我放在了这里噢</a>~</p>
+</blockquote>
+<h2 id="记忆化搜索"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索</h2><blockquote>
+<p>记忆化搜索的目的就是为了解决重复计算。</p>
+</blockquote>
+<blockquote>
+<p>通过一个斐波那契数列和小伙伴们来聊一聊什么是记忆化搜索吧~</p>
+</blockquote>
+<h3 id="斐波那契数列-三种求解方法"><a href="#斐波那契数列-三种求解方法" class="headerlink" title="斐波那契数列(三种求解方法)"></a>斐波那契数列(三种求解方法)</h3><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/c7e404a186454a2d9c02aca46d45a19e.png" alt="在这里插入图片描述" style="zoom:67%;" />
+**Answer1. 递归实现**
+斐波那契数列的递归实现是比较简单的。就抓住递归的边界和递归式就没问题了。
+
+<pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int n;
+
+int fib(int n)
+&#123;
+    if (n == 1) return 0;
+    if (n == 2) return 1;//递归边界
+    return fib(n - 1) + fib(n - 2);//递归式
+&#125;
+
+int main()
+&#123;
+    cin &gt;&gt; n;
+    for (int i = 1; i &lt;= n; i++)
+    &#123;
+        cout &lt;&lt; fib(i) &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/27c23b531c4d46ae95b91a8a35d4e5b5.png" alt="在这里插入图片描述" style="zoom:67%;" />
+递归的时间复杂度是成指数级增长的，因此如果不进行一些优化的话，求解的`N`很大的话，很容易就`TLE`。我们可以看出fib(3)被重复计算了两次，如果我们将这个数保存起来，再遇到的时候就可以直接使用，大大简化了计算量。这就是记忆化搜索的思想。
+**Answer2. 记忆化搜索**
+
+<pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 50;
+int n;
+int instance[N];//判断某个状态是否算出过解
+
+int dfs_m(int  n)
+&#123;
+   if (n == 1) return 0;
+   if (n == 2) return 1;//递归的边界条件
+   if (instance[n]) return instance[n];//某个状态出现过就直接输出该状态的解
+   return instance[n] = dfs_m(n - 1) + dfs_m(n - 2);//没算出过解就按递推式正常算
+&#125;
+
+int main()
+&#123;
+   cin &gt;&gt; n;
+   for (int i = 1; i &lt;= n; i++)
+   &#123;
+       cout &lt;&lt; dfs_m(i) &lt;&lt; &#39; &#39;;
+   &#125;
+   cout &lt;&lt; endl;
+   return 0;
+&#125;
+</code></pre>
+<img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/d43e3c5a5d944214a73e8d9c724d2f2a.png" alt="在这里插入图片描述" style="zoom:67%;" />
+记忆化搜索按照自顶向下的顺序，每求得一个状态时，就把它的解保存下来，以后再次遇到这个状态时就不用重复求解了。
+
+<p>记忆化搜索包含两个要素<strong>记忆化</strong>和<strong>搜索</strong>。</p>
+<ul>
+<li>沿用搜索的一般模式，本质还是用递归函数实现。</li>
+<li>在搜索的过程中将已经得到的解保存起来，下次需要时直接用。</li>
+</ul>
+<p>记忆化搜索是理解DP思想很重要的基础噢，把记忆化搜索掌握明白，会很容易就入门动态规划噢~</p>
+<blockquote>
+<p>还有一种递推的方法，时间复杂度只有$O(n)$。递推和递归的区别在于，递推是自底向上，递归是自顶向下。</p>
+</blockquote>
+<p><strong>Answer3. 递推法</strong></p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 50;
+int n;
+int ans[N];
+
+int main()
+&#123;
+    cin &gt;&gt; n;
+    ans[1] = 0;
+    ans[2] = 1;
+    for (int i = 3; i &lt;= n; i++)
+    &#123;
+        ans[i] = ans[i - 1] + ans[i - 2];//递推式
+    &#125;
+    for (int i =1; i &lt;= n; i++)
+    &#123;
+        cout &lt;&lt; ans[i] &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><blockquote>
 <p>想到啥就说啥了，给备战蓝桥杯的小伙伴们提些建议。</p>
 </blockquote>
 <p>我不推荐大家去<code>leetcode</code>上刷题，因为<code>leetcode</code>的形式和蓝桥杯是不太一样的。力扣只需要写函数，输入输出已经内置好了。蓝桥杯的输入输出是需要自己写的。另外呢力扣主要是面向找工作的，题目是面试用的，不是专门打比赛的。因此题目不太适合蓝桥杯竞赛。当然了里面的题目还是很经典的，专门学某一算法是可以刷力扣的。我给大家推荐几个适合的网站还有书籍。</p>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/">ACwing网站</a><br><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/">洛谷</a><br><a target="_blank" rel="noopener" href="https://www.dotcpp.com/oj/train/">C语言网蓝桥杯题库</a><br><a target="_blank" rel="noopener" href="http://lx.lanqiao.cn/problemsets.page">蓝桥杯练习系统</a><br><a target="_blank" rel="noopener" href="https://www.lanqiao.cn/problems/?sort=students_count&category_id=3">蓝桥杯官网题库</a><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/da7e876c11b741df8c7d3d5b71ab38f8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_12,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/b811a601fe264db3988a7eca92347a1f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/df58c6e5577e47d5a9fd70ca73d21e06.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_11,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/a799d7696df843f3b8a57695348148cc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_11,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/">ACwing网站</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/">洛谷</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.dotcpp.com/oj/train/">C语言网蓝桥杯题库</a></li>
+<li><a target="_blank" rel="noopener" href="http://lx.lanqiao.cn/problemsets.page">蓝桥杯练习系统</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lanqiao.cn/problems/?sort=students_count&category_id=3">蓝桥杯官网题库</a><img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/da7e876c11b741df8c7d3d5b71ab38f8.png" alt="在这里插入图片描述" style="zoom:67%;" />
+<img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/b811a601fe264db3988a7eca92347a1f.png" alt="在这里插入图片描述" style="zoom:67%;" />
+<img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/df58c6e5577e47d5a9fd70ca73d21e06.png" alt="在这里插入图片描述" style="zoom:67%;" /></li>
+</ul>
+<img src="/img/loading.gif" data-original="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/a799d7696df843f3b8a57695348148cc.png" alt="在这里插入图片描述" style="zoom: 67%;" />
+
 <blockquote>
 <p>这几个网站和书是我一直在用的，真心推荐给大家~</p>
 </blockquote>
-<p>美好的时光总是短暂的，又到了说再见的时候啦~一键三连支持一下吧！<br><img src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/174d4b7d8830426085d94f82fa74bd55.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5omT6JOd5qGl5p2v55qE6YCa5L-h5Lq6,size_15,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">才疏学浅的小熊</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/07/15/%E7%AE%97%E6%B3%95/">http://example.com/2023/07/15/算法/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">考研er的精神所</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/loading.gif" data-original="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/loading.gif" data-original="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2023/07/15/%E5%A4%A7%E5%94%90%E6%9D%AF%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" title="大唐杯经验分享"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">大唐杯经验分享</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">才疏学浅的小熊</div><div class="author-info__description">纸上得来终觉浅，觉知此事须躬行</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xubenshan" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">等考研结束在继续美化网站</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-text">写在前面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-DFS-%E5%9B%9E%E6%BA%AF"><span class="toc-text">一、深度优先搜索(DFS)+回溯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81DFS%E6%A8%A1%E6%9D%BF"><span class="toc-text">二、DFS模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81DFS%E7%BB%8F%E5%85%B8%E4%BE%8B%E9%A2%98"><span class="toc-text">三、DFS经典例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A8%A1%E6%9D%BF%E9%A2%98%E2%80%94%E2%80%94%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98"><span class="toc-text">1.模板题——迷宫问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-DFS%E6%9A%B4%E5%8A%9B%E6%90%9C%E7%B4%A2"><span class="toc-text">2.01背包问题(DFS暴力搜索)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%9E%E6%BA%AF%E2%80%94%E2%80%94-USACO1-5-%E5%85%AB%E7%9A%87%E5%90%8E-Checker-Challenge"><span class="toc-text">3.回溯——[USACO1.5]八皇后 Checker Challenge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%9E%8B%E6%9E%9A%E4%B8%BE"><span class="toc-text">4.递归实现排列型枚举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E7%BB%84%E5%90%88%E5%9E%8B%E6%9E%9A%E4%B8%BE"><span class="toc-text">5.递归实现组合型枚举</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%89%AA%E6%9E%9D%E6%80%9D%E6%83%B3"><span class="toc-text">四、剪枝思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%89%AA%E6%9E%9D%E6%80%9D%E6%83%B3%E5%9C%A8DFS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">五、剪枝思想在DFS中的应用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2"><span class="toc-text">写在后面</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/801%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%84%9F%E6%82%9F/" title="801通信原理复习感悟">801通信原理复习感悟</a><time datetime="2023-07-15T15:12:18.000Z" title="发表于 2023-07-15 23:12:18">2023-07-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/git/" title="Git的学习笔记">Git的学习笔记</a><time datetime="2023-07-15T15:12:18.000Z" title="发表于 2023-07-15 23:12:18">2023-07-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/post%E5%A4%8D%E4%B9%A0%E8%80%83%E7%A0%94%E6%94%BF%E6%B2%BB%E7%9A%84%E6%84%9F%E6%82%9F/" title="复习考研政治的感悟">复习考研政治的感悟</a><time datetime="2023-07-15T09:52:30.000Z" title="发表于 2023-07-15 17:52:30">2023-07-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/%E5%A4%A7%E5%94%90%E6%9D%AF%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" title="大唐杯经验分享">大唐杯经验分享</a><time datetime="2023-07-15T09:25:19.000Z" title="发表于 2023-07-15 17:25:19">2023-07-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/%E7%AE%97%E6%B3%95/" title="算法——搜索专题">算法——搜索专题</a><time datetime="2023-07-15T09:25:19.000Z" title="发表于 2023-07-15 17:25:19">2023-07-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 才疏学浅的小熊</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">才疏学浅的小熊</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/07/15/%E7%AE%97%E6%B3%95/">http://example.com/2023/07/15/算法/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">考研er的精神所</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/loading.gif" data-original="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/loading.gif" data-original="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/15/post%E5%A4%8D%E4%B9%A0%E8%80%83%E7%A0%94%E6%94%BF%E6%B2%BB%E7%9A%84%E6%84%9F%E6%82%9F/" title="复习考研政治的感悟"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">复习考研政治的感悟</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/15/%E5%A4%A7%E5%94%90%E6%9D%AF%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" title="大唐杯经验分享"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">大唐杯经验分享</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">才疏学浅的小熊</div><div class="author-info__description">纸上得来终觉浅，觉知此事须躬行</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xubenshan" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">等考研结束在继续美化网站</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E4%B8%93%E9%A2%98"><span class="toc-text">搜索专题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-DFS-%E5%9B%9E%E6%BA%AF"><span class="toc-text">深度优先搜索(DFS)+回溯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFS%E6%A8%A1%E6%9D%BF"><span class="toc-text">DFS模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFS%E7%BB%8F%E5%85%B8%E4%BE%8B%E9%A2%98"><span class="toc-text">DFS经典例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E9%A2%98%E2%80%94%E2%80%94%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98"><span class="toc-text">模板题——迷宫问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-DFS%E6%9A%B4%E5%8A%9B%E6%90%9C%E7%B4%A2"><span class="toc-text">01背包问题(DFS暴力搜索)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E6%BA%AF%E2%80%94%E2%80%94-USACO1-5-%E5%85%AB%E7%9A%87%E5%90%8E"><span class="toc-text">回溯——[USACO1.5]八皇后</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%9E%8B%E6%9E%9A%E4%B8%BE"><span class="toc-text">递归实现排列型枚举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E7%BB%84%E5%90%88%E5%9E%8B%E6%9E%9A%E4%B8%BE"><span class="toc-text">递归实现组合型枚举</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%AA%E6%9E%9D%E6%80%9D%E6%83%B3"><span class="toc-text">剪枝思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%AA%E6%9E%9D%E6%80%9D%E6%83%B3%E5%9C%A8DFS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">剪枝思想在DFS中的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%EF%BC%88BFS%EF%BC%89"><span class="toc-text">广度优先搜索（BFS）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%98%9F%E5%88%97%E6%9D%A5%E5%AE%9E%E7%8E%B0BFS%EF%BC%88%E6%A8%A1%E6%9D%BF%EF%BC%89"><span class="toc-text">用队列来实现BFS（模板）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFS%E7%BB%8F%E5%85%B8%E4%BE%8B%E9%A2%98"><span class="toc-text">BFS经典例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E9%A2%98%E2%80%94%E2%80%94%E8%BF%B7%E5%AE%AB%E6%9C%80%E7%9F%AD%E8%B7%AF"><span class="toc-text">模板题——迷宫最短路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-text">马的遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="toc-text">块的个数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2"><span class="toc-text">记忆化搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97-%E4%B8%89%E7%A7%8D%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95"><span class="toc-text">斐波那契数列(三种求解方法)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2"><span class="toc-text">写在后面</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/801%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%84%9F%E6%82%9F/" title="801通信原理复习感悟">801通信原理复习感悟</a><time datetime="2023-07-15T15:12:18.000Z" title="发表于 2023-07-15 23:12:18">2023-07-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/git/" title="Git的学习笔记">Git的学习笔记</a><time datetime="2023-07-15T15:12:18.000Z" title="发表于 2023-07-15 23:12:18">2023-07-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/post%E5%A4%8D%E4%B9%A0%E8%80%83%E7%A0%94%E6%94%BF%E6%B2%BB%E7%9A%84%E6%84%9F%E6%82%9F/" title="复习考研政治的感悟">复习考研政治的感悟</a><time datetime="2023-07-15T09:52:30.000Z" title="发表于 2023-07-15 17:52:30">2023-07-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/%E7%AE%97%E6%B3%95/" title="无题">无题</a><time datetime="2023-07-15T09:40:45.147Z" title="发表于 2023-07-15 17:40:45">2023-07-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/%E5%A4%A7%E5%94%90%E6%9D%AF%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" title="大唐杯经验分享">大唐杯经验分享</a><time datetime="2023-07-15T09:25:19.000Z" title="发表于 2023-07-15 17:25:19">2023-07-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 才疏学浅的小熊</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
         <style>
             [bg-lazy] {
                 background-image: none !important;
