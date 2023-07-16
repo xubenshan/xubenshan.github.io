@@ -42,6 +42,25 @@
     
     
     <entry>
+      <title>801通信原理总结</title>
+      <link href="/2023/07/15/801%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/"/>
+      <url>/2023/07/15/801%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h1 id="801通信原理总结"><a href="#801通信原理总结" class="headerlink" title="801通信原理总结"></a>801通信原理总结</h1><h2 id="第四章-模拟通信系统"><a href="#第四章-模拟通信系统" class="headerlink" title="第四章 模拟通信系统"></a>第四章 模拟通信系统</h2><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A1%86%E6%9E%B6.jpg" style="zoom: 67%;" /><p>第四章的知识体系非常清晰，内容也不是很多。主要包括两个方面，线性调制和非线性调制。重点内容就是调制和解调框图，不同调制方式的区别和表达式。</p><h3 id="题型一-已知调制方式求功率谱密度"><a href="#题型一-已知调制方式求功率谱密度" class="headerlink" title="题型一 已知调制方式求功率谱密度"></a>题型一 已知调制方式求功率谱密度</h3><p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/image-20230716145702054.png" alt="image-20230716145702054"></p><blockquote><p>本质上还是考察第三章随机过程的各种参数的求解</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/image-20230716145907657.png" alt="image-20230716145907657"></p><h3 id="题型二-分析AM信号，求调制指数，功率，画频谱"><a href="#题型二-分析AM信号，求调制指数，功率，画频谱" class="headerlink" title="题型二 分析AM信号，求调制指数，功率，画频谱"></a>题型二 分析AM信号，求调制指数，功率，画频谱</h3><p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/image-20230716150014631.png" alt="image-20230716150014631"> </p><blockquote><p>第一问和第二问都是第二章的知识点。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/image-20230716150202948.png" alt="image-20230716150202948"></p><h3 id="题型三-画出解调框图（多个信号）"><a href="#题型三-画出解调框图（多个信号）" class="headerlink" title="题型三 画出解调框图（多个信号）"></a>题型三 画出解调框图（多个信号）</h3><p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/image-20230716150301578.png" alt="image-20230716150301578"></p><blockquote><p>本质上还是考察前面几种调制方式的解调原理。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/xubenshan/pic-blog@main/img/image-20230716150423447.png" alt="image-20230716150423447"></p><p>这里没有离散大载波，故直接写恢复载波即可。若有大载波，则要通过<code>NBF</code>或<code>窄带滤波器</code>进行提取载波。</p><p>·</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 考研感悟 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>复习考研政治的感悟</title>
       <link href="/2023/07/15/post%E5%A4%8D%E4%B9%A0%E8%80%83%E7%A0%94%E6%94%BF%E6%B2%BB%E7%9A%84%E6%84%9F%E6%82%9F/"/>
       <url>/2023/07/15/post%E5%A4%8D%E4%B9%A0%E8%80%83%E7%A0%94%E6%94%BF%E6%B2%BB%E7%9A%84%E6%84%9F%E6%82%9F/</url>
